@@ -144,6 +144,20 @@ class Panel extends React.Component {
 	}
 }
 
+class Tile extends React.Component {
+	render () {
+		return (
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+				<a href={this.props.href} class="panel panel-default thumbnail cm-thumbnail">
+					<div class="panel-body text-center">
+						{this.props.children}
+					</div>
+				</a>
+			</div>
+		)
+	}
+}
+
 class Content extends React.Component {
 	render() {
 		return (
@@ -178,72 +192,42 @@ class Content extends React.Component {
 					</div>
 				</div>
 				<div class="row cm-fix-height">
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="dashboard-sales.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={dashboard_svg} alt="dashboard" />
-								</span>
-								<h4>Dashboard</h4> <small>C3.js charts to display some fancy pies.</small>
-
-							</div>
-						</a>
-					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="notepad.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={notepad_svg} alt="notepad" />
-								</span>
-								<h4>Text editor</h4> <small>Summernote WYSIWYG Editor implementation.</small>
-
-							</div>
-						</a>
-					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="components-text.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={brick_svg} alt="brick" />
-								</span>
-								<h4>Components</h4> <small>Bootstrap main classes.</small>
-
-							</div>
-						</a>
-					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="layouts-breadcrumb1.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={window_layout_svg} alt="window-layout" />
-								</span>
-								<h4>Navbar layouts</h4> <small>Put all you need on the top of your screen.</small>
-
-							</div>
-						</a>
-					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="ico-sf.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={cat_svg} alt="cat" />
-								</span>
-								<h4>Icons</h4> <small>Semantic little pics.</small>
-
-							</div>
-						</a>
-					</div>
-					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-						<a href="login.html" class="panel panel-default thumbnail cm-thumbnail">
-							<div class="panel-body text-center">
-								<span class="svg-48">
-									<img src={lock_open_svg} alt="lock-open" />
-								</span>
-								<h4>Login page</h4> <small>Have a look to the login page.</small>
-
-							</div>
-						</a>
-					</div>
+					<Tile href="dashboard-sales.html">
+						<span class="svg-48">
+							<img src={dashboard_svg} alt="dashboard" />
+						</span>
+						<h4>Dashboard</h4> <small>C3.js charts to display some fancy pies.</small>
+					</Tile>
+					<Tile href="notepad.html">
+						<span class="svg-48">
+							<img src={notepad_svg} alt="notepad" />
+						</span>
+						<h4>Text editor</h4> <small>Summernote WYSIWYG Editor implementation.</small>
+					</Tile>
+					<Tile href="components-text.html">
+						<span class="svg-48">
+							<img src={brick_svg} alt="brick" />
+						</span>
+						<h4>Components</h4> <small>Bootstrap main classes.</small>
+					</Tile>
+					<Tile href="layouts-breadcrumb1.html">
+						<span class="svg-48">
+							<img src={window_layout_svg} alt="window-layout" />
+						</span>
+						<h4>Navbar layouts</h4> <small>Put all you need on the top of your screen.</small>
+					</Tile>
+					<Tile href="ico-sf.html">
+						<span class="svg-48">
+							<img src={cat_svg} alt="cat" />
+						</span>
+						<h4>Icons</h4> <small>Semantic little pics.</small>
+					</Tile>
+					<Tile href="login.html">
+						<span class="svg-48">
+							<img src={lock_open_svg} alt="lock-open" />
+						</span>
+						<h4>Login page</h4> <small>Have a look to the login page.</small>
+					</Tile>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">Check our fancy colors</div>

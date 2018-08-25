@@ -16,7 +16,23 @@ import window_layout_svg from './assets/img/sf/window-layout.svg';
 import cat_svg from './assets/img/sf/cat.svg';
 import lock_open_svg from './assets/img/sf/lock-open.svg';
 
+let addScript = (script_src) => {
+	const script = document.createElement("script");
+	script.src = script_src;
+	script.async = true;
+	document.body.appendChild(script);
+}
+
 export default class App extends React.Component {
+
+	componentDidMount() {
+		addScript("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+		addScript("https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js");
+		addScript("https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js");
+		addScript("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js");
+		addScript("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js");
+	}
+	
 	render () {
 		return [
 			<div id="cm-menu">

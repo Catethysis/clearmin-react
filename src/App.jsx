@@ -137,8 +137,7 @@ class Panel extends React.Component {
 	render () {
 		return (
 			<div class="container-fluid cm-container-white">
-				<h2 style={{marginTop: 0}}>Welcome to Clearmin template demo !</h2> 
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.</p>
+				{this.props.children}
 			</div>
 		)
 	}
@@ -150,7 +149,6 @@ class Tile extends React.Component {
 			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
 				<a href={this.props.href} class="panel panel-default thumbnail cm-thumbnail">
 					<div class="panel-body text-center">
-						{this.props.children}
 					</div>
 				</a>
 			</div>
@@ -306,7 +304,10 @@ export default class App extends React.Component {
 			<Aside />,
 			<Header />,
 			<div id="global">
-				<Panel />
+				<Panel>
+					<h2 style={{marginTop: 0}}>Welcome to Clearmin template demo !</h2> 
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis.</p>
+				</Panel>
 				<Content />
 				<Footer />
 			</div>
